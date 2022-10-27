@@ -1,0 +1,131 @@
+
+.PromotionContainer {
+    max-width: 134rem;
+    width: 134rem;
+    height: 37rem;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+.IconboxForward, .IconboxBack {
+    position: absolute;
+    top:20rem;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 50%;
+    border:1px solid #999;
+    color:#D44550;
+    z-index:1000;
+}
+.IconboxForward {
+    right:1.5rem;
+}
+.IconboxBack {
+    left:1.5rem;
+}
+
+.PromotionItemC{
+    flex-shrink: 0;
+    position: relative;
+    width: 30rem;
+    height: 36rem;
+    border-radius: 15px;
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-right:2rem;
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 4px;
+}
+.PromotionPeriod{
+    position:absolute;
+    top:0;
+    left: 0;
+    background-color: #fff;
+    text-align: center;
+    width: 12rem;
+    height: 3rem;
+    line-height: 3rem;
+    border-bottom-right-radius:15px;
+}
+.PromotionItemImgBox {
+    width: 30rem;
+    position: relative;
+    /* border-top-left-radius:20px;
+    border-top-right-radius:20px;
+    overflow: hidden; */
+}
+.PromotionItemImgBox img {
+    width: 100%;
+    object-fit: contain;
+}
+.PromotionItemT {
+    flex:auto;
+    width: 30rem;
+    padding:1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.PromotionItemDesc h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-top:0.4rem;
+    margin-bottom:0.8rem;
+}
+.PromotionItemDesc p{
+    font-size: 1rem;
+}
+
+.Footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.Footer a{
+    color:#D44550;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: underline;
+}
+
+.btn {
+    width: 8rem;
+    height: 4rem;
+    background-color: #D44550;
+    border-radius: 2rem;
+    color:#fff;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border:none;
+}
+
+.nextPageContainer {
+    /* background-color: aqua; */
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:1rem;
+}
+
+.liItem {
+    list-style-type: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #999;
+    margin:0 5px;
+    transition: all 0.3s ease-in;
+}
+.activeLiItem {
+    width: 14px;
+    height: 14px;
+    background-color: #D44550;
+}
