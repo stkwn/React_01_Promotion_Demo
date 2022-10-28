@@ -3,23 +3,24 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import classes from "./Promotion.module.css";
 import PromotionItem from "./PromotionItem";
 import { ItemContents } from "./ItemContents.js";
+import ItemDetails from "./ItemDetails";
 
  export default function Promotion() {
     const numPerPage = 4;
     const [currentpage, setCurrentPage] = useState(0);
     const pageNumber = Math.ceil(ItemContents.length / numPerPage);
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {  //assign interval to a variable to clear it.
-      if (currentpage == pageNumber - 1 && pageNumber !== 0) {
-        return setCurrentPage(0)
-      } else {
-        setCurrentPage((prev) => prev + 1)
-      }
-    }, 5000)
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {  //assign interval to a variable to clear it.
+  //     if (currentpage == pageNumber - 1 && pageNumber !== 0) {
+  //       return setCurrentPage(0)
+  //     } else {
+  //       setCurrentPage((prev) => prev + 1)
+  //     }
+  //   }, 5000)
   
-    return () => clearInterval(intervalId); //This is important
-  }, [currentpage])
+  //   return () => clearInterval(intervalId); //This is important
+  // }, [currentpage])
 
     const createDot = (pageNumber) => {
     const lis = new Array(pageNumber).fill(1).map((item, index) => (
@@ -35,6 +36,7 @@ import { ItemContents } from "./ItemContents.js";
 
     return (
       <div className={classes.OuterContainer}>
+        <ItemDetails />
         <div className={classes.PromotionContainer}>
           {currentpage !== 0 && (
             <div
@@ -59,7 +61,7 @@ import { ItemContents } from "./ItemContents.js";
             <PromotionItem key={item.id} item={item} />
           ))}
         </div>
-        <ul className={classes.nextPageContainer}>{createDot(pageNumber)}</ul>
+        <ul className={classes.nextPageContainer}>{pageNumber >1 && createDot(pageNumber)}</ul>
       </div>
     );
 }

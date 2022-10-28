@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 
 const BackdropRoot = document.getElementById('backdrop-root');
 
-const Backdrop = () => {
-    return ReactDOM.createPortal(<div className='backdropStyle'></div>,BackdropRoot);
+const Backdrop = (props) => {
+    return ReactDOM.createPortal(<div className='backdropStyle'>{props.children}</div>,BackdropRoot);
 }
 
 export default Backdrop
