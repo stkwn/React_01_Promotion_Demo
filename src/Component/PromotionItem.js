@@ -1,8 +1,9 @@
 import React from 'react';
 import classes from "./Promotion.module.css";
-const PromotionItem = ({item}) => {
+const PromotionItem = ({item,onShow, onCancle}) => {
+
     return (
-      <div className={classes.PromotionItemC}>
+      <div className={classes.PromotionItemC} onClick={()=>onShow(item)} >
         <div className={classes.PromotionItemImgBox}>
           <div className={classes.PromotionPeriod}>
             <span>{`end ${new Date(item.endDate).toLocaleDateString('en-GB',{day:"numeric",month:"short"})}`}</span>
